@@ -1,0 +1,374 @@
+@charset "UTF-8";
+
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+// footer.scss
+// 共通パーツ : フッター
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+.footer {
+    color: $color-white;
+    text-align: center;
+    background: $color-black;
+    &__title {
+        font-size: 3.0rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        padding-top: 50px;
+        @extend .font-en;
+        @include s {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+    }
+    &__top {
+        background: $color-key;
+    }
+    &__inner {
+        display: flex;
+        max-width: 840px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0 0 55px;
+        @include s {
+            flex-direction: column;
+            padding: 0 0 25px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 10px 5%;
+        &:first-child {
+            border-right: $color-white solid 1px;
+            @include s {
+                border: none;
+            }
+        }
+        @include s {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &__title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            @include s {
+                font-size: 1.5rem;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            text-align: left;
+            margin-bottom: 1.5em;
+            @include s {
+                font-size: 1.4rem;
+            }
+        }
+        &__link {
+            width: 80%;
+            margin: auto auto 0;
+            @include s {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__bottom {
+        background: $color-black;
+        padding: 20px 0;
+        overflow: hidden;
+        @include s {
+            padding-top: 30px;
+        }
+        &__inner {
+            @extend .container;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include m {
+                flex-wrap: wrap;
+            }
+            @include s {
+                flex-direction: column;
+            }
+        }
+        a {
+            color: $color-gray3;
+            display: block;
+            text-decoration: none;
+        }
+        &__nav {
+            &-service {
+                display: flex;
+                @include s {
+                    width: 100%;
+                    // justify-content: space-between;
+	                justify-content: center;
+                    margin-bottom: 20px;
+                }
+                &__item {
+                    font-size: 1.3rem;
+                    margin-right: 1em;
+                    padding-right: 1em;
+                    line-height: 1;
+                    border-right: $color-gray3 solid 1px;
+                    @include l {
+                        font-size: 1.2rem;
+                        margin-right: 1em;
+                    }
+                    @include s {
+                        font-size: 1.2rem;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                        border-right: none;
+                    }
+                    a {
+                        //padding: 2px 0;
+                        display: block;
+                        &:hover {
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+            &-utility {
+                display: flex;
+                flex-wrap: wrap;
+                @include s {
+                    justify-content: center;
+                }
+                &__item {
+                    font-size: 1.3rem;
+                    margin-right: 1em;
+                    @include l {
+                        font-size: 1.2rem;
+                    }
+                    @include s {
+                        margin-bottom: 0.8em;
+                    }
+                    a {
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+        &__box {
+            display: flex;
+            @include m {
+                width: 100%;
+                margin-top: 10px;
+                justify-content: space-between;
+            }
+            @include s {
+                flex-direction: column;
+            }
+        }
+        .copy {
+            display: block;
+            font-size: 1.3rem;
+            color: #939393;
+            @include l {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.footer--jobs {
+    background-color: #646464;
+    .footer__bottom {
+        position: relative;
+        background-color: #646464;
+        a {
+            color: $color-white;
+        }
+        &:before {
+            position: absolute;
+            content:"";
+            top: 0;
+            left: 50%;
+            height: 1px;
+            width: 80%;
+            max-width: calc(#{$global-width} + 80px);
+            transform: translateX(-50%);
+            background: $color-white;
+            @include s {
+                max-width: 100%;
+                width: 90%;
+            }
+        }
+    }
+    .copy {
+        color: $color-gray2;
+    }
+}
+.footer__info {
+    padding: 50px 0 20px;
+    @include s {
+        padding: 30px 0 10px;
+    }
+    .logo-nav_icon { 
+        fill: $color-white;
+        transition: all 0.3s;
+    }
+    &__inner {
+        position: relative;
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        @include m {
+            display: block;
+        }
+    }
+    &__meta {
+        flex-basis: 200px;
+        flex-shrink: 0;
+        @include m {
+            display: flex;
+        }
+        @include s {
+            margin: 0 0 20px;
+        }
+        &__logo {
+            display: block;
+            width: 90px;
+            height: 30px;
+            margin: 0 0 30px;
+            &:hover {
+                .logo-nav_icon{
+                    fill: $color-key;
+                }
+                svg,path {
+                    fill: $color-key;
+                }
+            }
+        }
+        &__address {
+            text-align: left;
+            font-style: normal;
+            @include m {
+                margin: 0 0 0 25px;
+            }
+            h2 {
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin: 0 0 5px;
+                @include m {
+                    margin: 0;
+                }
+            }
+            p {
+                font-size: 1.4rem;
+                line-height: 1.8;
+            }
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: flex-end;
+        text-align: left;
+        flex-grow: 1;
+        margin: 8px 0 0;
+        @include m {
+            justify-content: space-between;
+        }
+        @include s {
+            flex-wrap: wrap;
+        }
+        li {
+            margin-right: 2em;
+            font-weight: bold;
+            @include l {
+                font-size: 1.3rem;
+                margin-right: 1.5em;
+            }
+            @include s {
+                width: 100%;
+                margin: 0 0 1em;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            .ico-arrorbtm {
+                margin-left: 7px;
+                width: 14px;
+                height: 14px;
+                vertical-align: middle;            
+            }
+            ul {
+                margin: 10px 0 0;
+            }
+            li {
+                font-weight: normal;
+                font-size: 1.3rem;
+                margin: 0 0 10px;
+              a::after{
+                content: '';
+                width: 5px;
+                height: 5px;
+                border: 0px;
+                border-top: solid 1.5px $color-white;
+                border-right: solid 1.5px $color-white;
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                display: inline-block;
+                margin-bottom: 1.5px;
+                margin-left: .6rem;
+              }
+            }
+        }
+        a {
+            color: $color-white;
+            text-decoration: none;
+            &.no-link {
+                display: inline-block;
+                pointer-events: none;
+            }
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+.btn-totop {
+    position: absolute;
+    top: -77px;
+    right: -60px;
+    width: 53px;
+    height: 44px;
+    z-index: 1;
+    @include m {
+        position: fixed;
+        top:auto;
+        bottom: 10px;
+        right: 10px;
+    }
+    a {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba($color-black, 0.8);
+        mix-blend-mode: multiply;
+        border-radius: 2px;
+        width: 100%;
+        height: 100%;
+        transition: all .6s;
+        @include m-up {
+            &:hover {
+                background-color: rgba($color-key, 0.9);
+            }
+        }
+    }
+}
+.ico-totop {
+    width: 23px;
+    height: 14px;
+}

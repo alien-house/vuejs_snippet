@@ -1,0 +1,25 @@
+{
+  "name": "vuejs_snippet",
+  "version": "1.0.0",
+  "description": "This is the document that I&#39;m gonna use in a presentation",
+  "author": "Shinji Nakai",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.4.0",
+    "highlight.js": "^9.18.1",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.2",
+    "vue-highlightjs": "^1.3.3"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.6.0",
+    "@types/highlight.js": "^9.12.3"
+  }
+}

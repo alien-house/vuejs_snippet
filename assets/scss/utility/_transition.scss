@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+// transition.scss
+// 切り替えトランジション
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: all .4s;
+}
+.page-leave-active {
+  opacity: 0;
+}
+.page-enter{
+  opacity: 0;
+}
